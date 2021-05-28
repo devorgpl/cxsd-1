@@ -1,5 +1,5 @@
 {
-  "name": "@calme1709/cxsd",
+  "name": "@huned/cxsd",
   "version": "0.3.9",
   "description": "Streaming XSD parser and XML parser generator with TypeScript output",
   "main": "./dist/index.js",
