@@ -253,22 +253,11 @@ export class TS extends Exporter {
       if (type.parent) parentDef = this.writeTypeRef(type.parent, "_");
 
       output.push(
-        "interface _" +
+        "interface " +
           name +
           this.writeParents(parentDef, type.mixinList) +
           " " +
           content +
-          "\n"
-      );
-      output.push(
-        exportPrefix +
-          "interface " +
-          name +
-          " extends _" +
-          name +
-          " { constructor: { new(): " +
-          name +
-          " }; }" +
           "\n"
       );
       if (type.isExported)
