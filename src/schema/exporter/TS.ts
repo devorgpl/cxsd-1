@@ -160,8 +160,10 @@ export class TS extends Exporter {
 
     if (type.isPlainPrimitive) {
       var literalList = type.literalList;
-
       if (literalList && literalList.length > 0) {
+        if (type.primitiveType && type.primitiveType.name === 'number') {
+          literalList = literalList.map((el: string) => el.replace('"','').replace('"',''));
+        }
         if (literalList.length > 1) {
           output.push("(" + literalList.join(" | ") + ")");
         } else output.push(literalList[0]);
